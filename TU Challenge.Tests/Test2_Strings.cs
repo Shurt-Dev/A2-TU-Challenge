@@ -4,7 +4,7 @@ namespace TU_Challenge.Tests
     /// Exercice 2, cette fois-ci on fait un peu d'algorythme jouant avec des boucles
     /// Pour rendre les tests visible, tu dois passer le "#if false" à "#if true" ligne 7
     /// </summary>
-#if false
+#if true
     public class Test2_Strings
     {
         [Test]
@@ -31,7 +31,7 @@ namespace TU_Challenge.Tests
             string result = MyStringImplementation.MixString(a, b);
             Assert.That(result, Is.EqualTo(expected));
         }
-
+        
         [Test]
         [TestCase("ABCD", null)]
         [TestCase(null, "ABCD")]
@@ -45,7 +45,7 @@ namespace TU_Challenge.Tests
                 MyStringImplementation.MixString(a, b);
             });
         }
-
+        
         /// <summary>
         /// Interdiction d'utiliser ToLower de la string.
         /// </summary>
@@ -70,24 +70,25 @@ namespace TU_Challenge.Tests
             string result = MyStringImplementation.Voyelles(a);
             Assert.That(result, Is.EqualTo(expected));
         }
-
+        
         [Test]
         [TestCase("IIM", "MII")]
-        [TestCase("HelloWorld", "dlrorWolleH")]
+        [TestCase("HelloWorld", "dlroWolleH")]
         public void Reverse(string a, string expected)
         {
             string result = MyStringImplementation.Reverse(a);
             Assert.That(result, Is.EqualTo(expected));
-        }
-
+        }        
         /// On prend une lettre sur 2, arrivé au bout on prend les lettres sautés
         [TestCase("HelloWorld", "HloolelWrd")]
+
+
         public void BazardString(string input, string expected)
         {
             string result = MyStringImplementation.BazardString(input);
             Assert.That(result, Is.EqualTo(expected));
         }
-
+        
         /// Opération inverse au BazardString
         [TestCase("HloolelWrd", "HelloWorld")]
         public void UnBazardString(string input, string expected)
@@ -95,7 +96,7 @@ namespace TU_Challenge.Tests
             string result = MyStringImplementation.UnBazardString(input);
             Assert.That(result, Is.EqualTo(expected));
         }
-
+        /*
         /// <summary>
         /// Bonus, non obligatoire pour aujourd'hui, pour comprendre le code de césar : 
         /// https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage
@@ -108,7 +109,7 @@ namespace TU_Challenge.Tests
             string result = MyStringImplementation.ToCesarCode(input, offset);
             Assert.That(result, Is.EqualTo(expected));
         }
-
+        */
     }
 #endif
 }
